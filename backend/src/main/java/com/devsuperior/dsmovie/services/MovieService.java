@@ -20,7 +20,7 @@ public class MovieService {
 	public Page<MovieDTO> findAll(Pageable pegealble) {		
 		Page<Movie> result = repository.findAll(pegealble);
 		Page<MovieDTO> page = result.map(x -> new MovieDTO(x));
-		return page;		
+		return page;
 	}
 	
 	@Transactional(readOnly = true)
